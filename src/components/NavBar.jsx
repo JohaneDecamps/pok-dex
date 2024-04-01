@@ -5,9 +5,10 @@ function NavBar ({pokemonIndex, pokemonList, handleClickSuivant, handleClickPrec
     return ( 
     
     <div> 
-    {pokemonIndex < pokemonList.length-1 ? <button onClick ={handleClickSuivant} > suivant </button> : null}
-
-    {pokemonIndex > 0 ?  <button onClick ={handleClickPrecedant} > précédent  </button> : null}
+  {pokemonList.map((pokemon, setPokemonIndex) => 
+  
+  <button key={pokemon.name} onClick={() => {handleClickSuivant(setPokemonIndex)}}> {pokemon.name} </button>
+  )}
      </div> 
  
     )
